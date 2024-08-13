@@ -8,13 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        'button-hover-color': '#FFB347',  // Define this color in the theme
+        'text-dark': '#1F2937',
+        'text-light': '#F1F5F9',
+        'primary-color': '#007ACC',
+        'secondary-color': '#83CDFF',
+        'accent-color': '#FFD700',
+        'bg-light': '#F8FAFC',
+        'bg-dark': '#1E293B',
       },
     },
   },
   plugins: [],
 };
+
 export default config;

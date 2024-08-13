@@ -2,32 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Colors */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #0025cc;
+  --secondary-color: #cfdee9;
+  --accent-color: #cc00ff;
+  --bg-light: #FFFBF3; /* Softer, warmer light background */
+  --bg-dark: #1E293B;
+  --text-light: #F1F5F9;
+  --text-dark: #1F2937;
+  --button-hover-color: #FFB347; /* Warm hover color */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Background Gradients */
+.bg-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 50%, var(--secondary-color) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+  @apply text-4xl font-extrabold text-gradient mb-6;
+}
+
+.section-content {
+  @apply text-lg text-text-dark dark:text-text-light mb-6;
+}
+
+.section {
+  @apply py-16 px-4 md:px-8;
+  background-color: var(--bg-light); /* Updated for warmth */
+}
+
+.card {
+  @apply bg-white dark:bg-bg-dark p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300;
+}
+
+/* Footer Styles */
+.footer-icon {
+  @apply text-gray-600 dark:text-gray-400 hover:text-button-hover-color transition-colors duration-300;
+}
+
+.footer-icon:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Complex Interactive Element */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes gradientAnimation {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+.hero-section {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  background-size: 200% 200%;
+  animation: gradientBackground 10s ease infinite;
 }

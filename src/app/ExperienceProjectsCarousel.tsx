@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const slides = [
@@ -12,8 +12,8 @@ const slides = [
         Created new iOS app from day 0 that returns a custom tax strategy so
         entrepreneurs can receive a maximum tax reduction.
         <br />
-        Implemented Plaid API financial monetization stack to connect with
-        backend, Machine Learning, AWS, and PostgreSQL, scaling startup towards
+        Implement Plaid API financial monetization stack to connect with
+        backend, Machine Learning, AWS and PostgreSQL, scaling startup towards
         $35M market size.
       </>
     ),
@@ -23,61 +23,44 @@ const slides = [
     title: "Software Development Intern, Series A Startup",
     date: "Jun 2024 - Aug 2024 | New York, NY",
     description:
-      "Developed cross-platform, cross-device, real-time cloud engine with geolocation support, expanded developer documentation, and implemented thorough software testing in an Angular, Java, AWS stack.",
+      "Develop cross-platform, cross-device, real-time cloud engine with geolocation support, expand developer documentation, and implement thorough software testing in an Angular, Java, AWS stack.",
     image: "/angular.png",
   },
   {
     title: "ML-Powered Legal Workflow App",
     date: "May 2024 - Present",
     description:
-      "Building a legal document workflow mobile app using React Native and MongoDB as part of the Out in Tech U (OIT U) LGBTQ+ in Tech Mentorship program. The app targets the Big Law market.",
+      "Building legal document workflow mobile app using React Native and MongoDB as part of the Out in Tech U (OIT U) LGBTQ+ in Tech Mentorship program. App targets Big Law market.",
     image: "/legaleyes.png",
   },
   {
     title: "Hackathon Organizer & Head Developer",
-    date: "October 2023 - Present",
+    date: "",
     description:
-      "Developed a publicity website with React and Node in collaboration with 7 engineers and 5 designers to advertise Columbia's annual hackathon and tech festival, DevFest, attracting 600 expected hackers.",
+      "Develop publicity website with React and Node in collaboration with 7 engineers and 5 designers to advertise Columbia's annual hackathon and tech festival, DevFest, attracting 600 expected hackers.",
     image: "/devfest.png",
   },
 ];
 
 export default function ExperienceProjectsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  const startAutoSlide = () => {
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 7000); // 7 seconds per slide
-  };
-
-  const resetAutoSlide = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-    startAutoSlide();
-  };
 
   useEffect(() => {
-    startAutoSlide();
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [slides.length]); // Include slides.length in the dependency array
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 8000); // 8 seconds per slide
+
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? slides.length - 1 : prevIndex - 1
     );
-    resetAutoSlide(); // Reset the auto-slide timer
   };
 
   const goToNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    resetAutoSlide(); // Reset the auto-slide timer
   };
 
   return (
@@ -120,7 +103,7 @@ export default function ExperienceProjectsCarousel() {
       {/* Left Arrow */}
       <button
         onClick={goToPrevious}
-        className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+        className="absolute top-1/2 left-[10px] transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700"
       >
         &#8592; {/* Left Arrow Symbol */}
       </button>
@@ -128,7 +111,7 @@ export default function ExperienceProjectsCarousel() {
       {/* Right Arrow */}
       <button
         onClick={goToNext}
-        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+        className="absolute top-1/2 right-[10px] transform -translate-y-1/2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-gray-200 dark:hover:bg-gray-700"
       >
         &#8594; {/* Right Arrow Symbol */}
       </button>
@@ -137,10 +120,7 @@ export default function ExperienceProjectsCarousel() {
         {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => {
-              setCurrentIndex(index);
-              resetAutoSlide(); // Reset the auto-slide timer
-            }}
+            onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full ${
               index === currentIndex
                 ? "bg-blue-500"

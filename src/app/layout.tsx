@@ -1,6 +1,10 @@
+// layout.tsx
+
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -127,6 +131,8 @@ export default function RootLayout({
           </div>
           <p className="mt-4">&copy; 2024 Sam Dobson. All rights reserved.</p>
         </footer>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

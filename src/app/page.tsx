@@ -1,3 +1,5 @@
+// page.tsx
+
 import Image from "next/image";
 import ExperienceProjectsCarousel from "./ExperienceProjectsCarousel"; // Import the custom carousel component
 
@@ -9,42 +11,61 @@ export default function Home() {
         className="hero-section section relative flex flex-col items-center text-center text-white"
       >
         <div className="absolute top-4 left-4 flex flex-col space-y-2 md:space-y-4 items-start">
-          <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
-            <Image
-              src="/columbia.png"
-              alt="Columbia CS"
-              width={30}
-              height={30}
-              className="rounded-full"
-            />
-            <span className="ml-2 text-gray-900 dark:text-white">
-              Columbia CS + Math &apos;25
-            </span>
-          </div>
-          <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
-            <Image
-              src="/OIT.png"
-              alt="Out in Tech U '24"
-              width={30}
-              height={30}
-              className="rounded-full"
-            />
-            <span className="ml-2 text-gray-900 dark:text-white">
-              Out in Tech U &apos;24
-            </span>
-          </div>
-          <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
-            <Image
-              src="/codepath.png"
-              alt="CodePath '23"
-              width={30}
-              height={30}
-              className="rounded-full"
-            />
-            <span className="ml-2 text-gray-900 dark:text-white">
-              CodePath &apos;23
-            </span>
-          </div>
+          <a
+            href="https://www.cs.columbia.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
+              <Image
+                src="/columbia.png"
+                alt="Columbia CS"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+              <span className="ml-2 text-gray-900 dark:text-white">
+                Columbia CS + Math &apos;25
+              </span>
+            </div>
+          </a>
+          <a
+            href="https://outintech.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
+              <Image
+                src="/OIT.png"
+                alt="Out in Tech U '24"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+              <span className="ml-2 text-gray-900 dark:text-white">
+                Out in Tech U &apos;24
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.codepath.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
+              <Image
+                src="/codepath.png"
+                alt="CodePath '23"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+              <span className="ml-2 text-gray-900 dark:text-white">
+                CodePath &apos;23
+              </span>
+            </div>
+          </a>
         </div>
 
         <Image

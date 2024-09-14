@@ -10,12 +10,11 @@ const slides = [
     date: "Jan 2024 - Aug 2024 | New York, NY",
     description: (
       <>
-        Created new iOS app from day 0 that returns a custom tax strategy so
+        Created new iOS app from day 1 that returns a custom tax strategy so
         entrepreneurs can receive a maximum tax reduction.
         <br />
         Implement Plaid API financial monetization stack to connect with
-        backend, Machine Learning, AWS and PostgreSQL, scaling startup towards
-        $35M market size.
+        backend, Machine Learning, AWS and PostgreSQL.
       </>
     ),
     image: "/xcode.png",
@@ -23,8 +22,18 @@ const slides = [
   {
     title: "Software Development Intern, Series A Startup",
     date: "Jun 2024 - Aug 2024 | New York, NY",
-    description:
-      "Develop cross-platform, cross-device, real-time cloud engine with geolocation support, expand developer documentation, and implement thorough software testing in an Angular, Java, AWS stack.",
+    description: (
+      <>
+        Contributed to the development of a cross-platform, real-time cloud
+        engine with geolocation support, furthering system scalability and
+        reliability.
+        <br />
+        Resolved key bugs and implemented dynamic file upload functionality,
+        improving responsiveness across devices. Utilized an Angular, Java, and
+        AWS stack, significantly enhancing platform stability and user
+        experience.
+      </>
+    ),
     image: "/angular.png",
   },
   {

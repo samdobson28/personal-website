@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       <section
-        id="experience-projects"
+        id="portfolio"
         className="section bg-gradient-to-b from-bg-light to-secondary-color dark:from-bg-dark dark:to-primary-color"
       >
         <h2 className="section-title text-center">Portfolio</h2>

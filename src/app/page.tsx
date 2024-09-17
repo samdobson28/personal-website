@@ -77,11 +77,17 @@ export default function Home() {
         />
         <h2 className="section-title">Welcome!</h2>
         <p className="section-content max-w-3xl">
-          I&apos;m Sam Dobson, a senior at Columbia University studying Computer
-          Science and Mathematics. I&apos;m passionate about software
-          development, machine learning, and creating impactful solutions. I aim
-          to blend creativity with technology to produce innovative applications
-          that make a difference.
+          👋 Hi! My name is Sam, and I’m a senior studying Computer Science and
+          Math at Columbia University.
+          <br />
+          💻 I’m a full-stack developer with experience in startups, web,
+          mobile, machine learning, and more.
+          <br />
+          🔍 I’m currently looking for 2025 new grad roles and/or summer 2025
+          internships in SWE & PM.
+          <br />
+          🕺 In my free time, I dance on campus, cook, and take on other
+          creative projects like sewing!
         </p>
       </section>
 

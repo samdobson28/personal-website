@@ -1,7 +1,8 @@
 // page.tsx
 
 import Image from "next/image";
-import ExperienceProjectsCarousel from "./ExperienceProjectsCarousel"; // Import the custom carousel component
+import WorkExperienceCarousel from "./WorkExperienceCarousel";
+import ProjectsResearchCarousel from "./ProjectsResearchCarousel";
 
 export default function Home() {
   return (
@@ -10,64 +11,6 @@ export default function Home() {
         id="about"
         className="hero-section section relative flex flex-col items-center text-center text-white"
       >
-        <div className="absolute top-4 left-4 flex flex-col space-y-2 md:space-y-4 items-start">
-          <a
-            href="https://www.cs.columbia.edu/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
-              <Image
-                src="/columbia.png"
-                alt="Columbia CS"
-                width={30}
-                height={30}
-                className="rounded-full"
-              />
-              <span className="ml-2 text-gray-900 dark:text-white">
-                Columbia CS + Math &apos;25
-              </span>
-            </div>
-          </a>
-          <a
-            href="https://outintech.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
-              <Image
-                src="/OIT.png"
-                alt="Out in Tech U '24"
-                width={30}
-                height={30}
-                className="rounded-full"
-              />
-              <span className="ml-2 text-gray-900 dark:text-white">
-                Out in Tech U &apos;24
-              </span>
-            </div>
-          </a>
-
-          <a
-            href="https://www.codepath.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg p-2 shadow-lg">
-              <Image
-                src="/codepath.png"
-                alt="CodePath '23"
-                width={30}
-                height={30}
-                className="rounded-full"
-              />
-              <span className="ml-2 text-gray-900 dark:text-white">
-                CodePath &apos;23
-              </span>
-            </div>
-          </a>
-        </div>
-
         <Image
           src="/profile.png"
           alt="Sam Dobson"
@@ -86,17 +29,25 @@ export default function Home() {
           🔍 I’m currently looking for 2025 new grad roles and/or summer 2025
           internships in SWE & PM.
           <br />
-          🕺 In my free time, I dance on campus, cook, and take on other
-          creative projects like sewing!
+          🕺 In my free time, I enjoy participating in dance and performing arts
+          on campus, writing, and other creative projects!
         </p>
       </section>
 
       <section
-        id="portfolio"
+        id="work-experience"
         className="section bg-gradient-to-b from-bg-light to-secondary-color dark:from-bg-dark dark:to-primary-color"
       >
-        <h2 className="section-title text-center">Portfolio</h2>
-        <ExperienceProjectsCarousel />
+        <h2 className="section-title text-center">Work Experience</h2>
+        <WorkExperienceCarousel />
+      </section>
+
+      <section
+        id="projects-research"
+        className="section bg-gradient-to-b from-bg-light to-secondary-color dark:from-bg-dark dark:to-primary-color"
+      >
+        <h2 className="section-title text-center">Projects & Research</h2>
+        <ProjectsResearchCarousel />
       </section>
 
       <section id="skills" className="section text-center">

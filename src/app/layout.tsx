@@ -1,5 +1,4 @@
-// layout.tsx
-
+// Updated layout.tsx
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import Image from "next/image";
@@ -58,8 +57,19 @@ export default function RootLayout({
                   </a>
                 </li>
                 <li>
-                  <a href="#portfolio" className="text-white hover:underline">
-                    Portfolio
+                  <a
+                    href="#work-experience"
+                    className="text-white hover:underline"
+                  >
+                    Work Experience
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#projects-research"
+                    className="text-white hover:underline"
+                  >
+                    Projects & Research
                   </a>
                 </li>
                 <li>

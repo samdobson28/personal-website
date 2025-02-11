@@ -1,3 +1,5 @@
+// ProjectsResearchCarousel.tsx
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -11,7 +13,6 @@ export default function ProjectsResearchCarousel() {
       description:
         "Building models for detecting audio deepfakes in real-time, focusing on political speech alterations. Utilized contrastive learning and locality-sensitive hashing techniques.",
       image: "/audio-research.png",
-      link: "https://drive.google.com/file/d/1PKyZJAOeeagtEHii7spqwbF8ou7x4ZB8/view?usp=sharing",
     },
     {
       title: "iOS App: Chorely",

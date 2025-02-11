@@ -1,4 +1,4 @@
-// Updated layout.tsx
+// layout.tsx
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import Image from "next/image";
@@ -42,24 +42,32 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        {/* Ensures proper scaling on mobile devices */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body
-        className={`${poppins.className} bg-bg-light dark:bg-bg-dark text-text-dark dark:text-text-light`}
+        className={`${poppins.className} bg-bg-light dark:bg-bg-dark text-text-dark dark:text-text-light overflow-x-hidden`}
       >
         <header className="bg-gradient p-6">
-          <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-4xl font-extrabold text-white">Sam Dobson</h1>
+          <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 className="text-4xl font-extrabold text-white mb-4 md:mb-0">
+              Sam Dobson
+            </h1>
             <nav>
-              <ul className="flex space-x-6">
+              <ul className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
                 <li>
-                  <a href="#about" className="text-white hover:underline">
+                  <a
+                    href="#about"
+                    className="text-white hover:underline text-sm md:text-base"
+                  >
                     About
                   </a>
                 </li>
                 <li>
                   <a
                     href="#work-experience"
-                    className="text-white hover:underline"
+                    className="text-white hover:underline text-sm md:text-base"
                   >
                     Work Experience
                   </a>
@@ -67,18 +75,24 @@ export default function RootLayout({
                 <li>
                   <a
                     href="#projects-research"
-                    className="text-white hover:underline"
+                    className="text-white hover:underline text-sm md:text-base"
                   >
                     Projects & Research
                   </a>
                 </li>
                 <li>
-                  <a href="#skills" className="text-white hover:underline">
+                  <a
+                    href="#skills"
+                    className="text-white hover:underline text-sm md:text-base"
+                  >
                     Skills
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="text-white hover:underline">
+                  <a
+                    href="#contact"
+                    className="text-white hover:underline text-sm md:text-base"
+                  >
                     Contact
                   </a>
                 </li>
@@ -87,7 +101,7 @@ export default function RootLayout({
                     href="https://docs.google.com/document/d/1ETUo9cUpL6WZE4nv2AcNEnX--b_Y-oqH/edit"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:underline"
+                    className="text-white hover:underline text-sm md:text-base"
                   >
                     Resume
                   </a>

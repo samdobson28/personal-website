@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'button-hover-color': '#FFB347',  // Define this color in the theme
-        'text-dark': '#1F2937',
-        'text-light': '#F1F5F9',
-        'primary-color': '#007ACC',
-        'secondary-color': '#83CDFF',
-        'accent-color': '#FFD700',
-        'bg-light': '#F8FAFC',
-        'bg-dark': '#1E293B',
+        "button-hover-color": "#FFB347", // Used for hover effects
+        "text-dark": "#1F2937",
+        "text-light": "#F1F5F9",
+        "primary-color": "#007ACC",
+        "secondary-color": "#83CDFF",
+        "accent-color": "#FFD700",
+        "bg-light": "#F8FAFC",
+        "bg-dark": "#1E293B",
       },
     },
   },

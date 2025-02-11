@@ -1,15 +1,26 @@
 // page.tsx
+"use client";
 
 import Image from "next/image";
 import WorkExperienceCarousel from "./WorkExperienceCarousel";
 import ProjectsResearchCarousel from "./ProjectsResearchCarousel";
+import { motion } from "framer-motion";
+
+const fadeInVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Home() {
   return (
     <>
-      <section
+      <motion.section
         id="about"
         className="hero-section section relative flex flex-col items-center text-center text-white"
+        variants={fadeInVariant}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
         <Image
           src="/profile.png"
@@ -32,25 +43,40 @@ export default function Home() {
           🕺 In my free time, I enjoy participating in dance and performing arts
           on campus, writing, and other creative projects!
         </p>
-      </section>
+      </motion.section>
 
-      <section
+      <motion.section
         id="work-experience"
         className="section bg-gradient-to-b from-bg-light to-secondary-color dark:from-bg-dark dark:to-primary-color"
+        variants={fadeInVariant}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 0.4 }}
       >
         <h2 className="section-title text-center">Work Experience</h2>
         <WorkExperienceCarousel />
-      </section>
+      </motion.section>
 
-      <section
+      <motion.section
         id="projects-research"
         className="section bg-gradient-to-b from-bg-light to-secondary-color dark:from-bg-dark dark:to-primary-color"
+        variants={fadeInVariant}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 0.6 }}
       >
         <h2 className="section-title text-center">Projects & Research</h2>
         <ProjectsResearchCarousel />
-      </section>
+      </motion.section>
 
-      <section id="skills" className="section text-center">
+      <motion.section
+        id="skills"
+        className="section text-center"
+        variants={fadeInVariant}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
         <h2 className="section-title">Skills</h2>
         <ul className="list-disc pl-5 inline-block text-left">
           <li>
@@ -67,9 +93,16 @@ export default function Home() {
           </li>
           <li>(Ps, this website is React and Next in Typescript)</li>
         </ul>
-      </section>
+      </motion.section>
 
-      <section id="contact" className="section text-center">
+      <motion.section
+        id="contact"
+        className="section text-center"
+        variants={fadeInVariant}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.8, delay: 1 }}
+      >
         <h2 className="section-title">Contact Me</h2>
         <p className="section-content max-w-3xl mx-auto">
           I&apos;m always open to new opportunities and collaborations. Feel
@@ -89,7 +122,7 @@ export default function Home() {
           </a>
           .
         </p>
-      </section>
+      </motion.section>
     </>
   );
 }
